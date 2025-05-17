@@ -26,12 +26,12 @@ double Circle::getArea() const {
     return radius * radius;
 }
 
-Circle::Circle(const Point& center, double radius, double max_coord)
+Circle::Circle(const Point& center, double radius)
     : center(center), radius(radius), max_coord(max_coord) {
     validate();
 }
 
-Circle::Circle(double x, double y, double radius, double max_coord)
+Circle::Circle(double x, double y, double radius)
     : center(x, y), radius(radius), max_coord(max_coord) {
     validate();
 }
@@ -64,7 +64,7 @@ Circle Circle::readFromStream(double max_coord) {
 
 std::istream& operator>>(std::istream& is, Circle& circle) {
     Point center;
-    unsigned int radius;
+    double radius;
 
     if (is >> center >> radius) {
         circle = Circle(center, radius);

@@ -12,8 +12,8 @@ public:
     Point getCenter() const;
     double getRadius() const;
 
-    Circle(const Point& center, double radius, double max_coord);
-    Circle(double x, double y, double radius, double max_coord);
+    Circle(const Point& center, double radius);
+    Circle(double x, double y, double radius);
 
     double getArea() const override;
     double getPerimeter() const override;

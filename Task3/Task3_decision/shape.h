@@ -8,10 +8,6 @@
 
 class Shape 
 {
-private:
-
-    double max_coord;
-
 public:
 
     /**
