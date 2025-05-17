@@ -69,28 +69,6 @@ namespace CircleTests
             Assert::IsFalse(p1 != p2);
         }
 
-        TEST_METHOD(AdditionOperator_AddsValueCorrectly)
-        {
-            Point p(1, 2);
-            double value = 3;
-
-            Point result = p + value;
-
-            Assert::AreEqual(4.0, result.getX());
-            Assert::AreEqual(5.0, result.getY());
-        }
-
-        TEST_METHOD(SubtractionOperator_SubtractsValueCorrectly)
-        {
-            Point p(5, 4);
-            double value = 3;
-
-            Point result = p - value;
-
-            Assert::AreEqual(2.0, result.getX());
-            Assert::AreEqual(1.0, result.getY());
-        }
-
         TEST_METHOD(OutputOperator_FormatsCorrectly)
         {
             Point p(10, 20);

@@ -3,17 +3,8 @@
 #include <sstream>
 #include <stdexcept>
 
-Circle::Circle(const Point& center, double radius)
-    : center(center), radius(radius) {
-    validateRadius();
-}
 
-Circle::Circle(double x, double y, double radius)
-    : center(x, y), radius(radius) {
-    validateRadius();
-}
-
-void Circle::validateRadius() const {
+void Circle::validate() const {
     if (radius == 0) {
         throw std::invalid_argument("Радиус должен быть положительным");
     }
@@ -35,8 +26,18 @@ double Circle::getArea() const {
     return radius * radius;
 }
 
+Circle::Circle(const Point& center, double radius, double max_coord)
+    : center(center), radius(radius), max_coord(max_coord) {
+    validate();
+}
+
+Circle::Circle(double x, double y, double radius, double max_coord)
+    : center(x, y), radius(radius), max_coord(max_coord) {
+    validate();
+}
+
 double Circle::getPerimeter() const {
-    return 2 *  radius;
+    return 2 *  3.14 * radius;
 }
 
 bool Circle::contains(const Point& point) const {
@@ -51,7 +52,7 @@ std::string Circle::toString() const {
     return oss.str();
 }
 
-Circle Circle::readFromStream() {
+Circle Circle::readFromStream(double max_coord) {
     Point center;
     double radius;
 

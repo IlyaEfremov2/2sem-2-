@@ -4,8 +4,23 @@
 #include <iostream>
 #include <locale>
 
+/**
+* @brief Получение точки с консольного ввода
+* @return Объект Point, созданный из введенных координат
+*/
+
 Point getPoint(const std::string& message);
+
+/**
+* @brief Получение числового значения с консольного ввода
+* @return Введенное пользователем число
+*/
 double getValue(const std::string& message);
+
+/**
+*@brief Точка входа в программу.
+* @return 0 при успешном выполнении, при ошибке 1.
+*/
 
 int main()
 {
@@ -38,6 +53,10 @@ int main()
     return 0;
 }
 
+/**
+* @brief Реализация функции getPoint
+*/
+
 Point getPoint(const std::string& message) {
     double x, y;
     while (true) {
@@ -53,6 +72,10 @@ Point getPoint(const std::string& message) {
     }
     return Point(x, y);
 }
+
+/**
+* @brief Реализация функции getValue
+*/
 
 double getValue(const std::string& message) {
     double value;
