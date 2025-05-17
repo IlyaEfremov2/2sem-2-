@@ -12,6 +12,13 @@ private:
     double y;
     double max_coord;
 
+    /**
+    * @brief Проверить валидность координат точки
+    * @param max_coord Максимально допустимое значение координат
+    */
+
+    void validate(double max_coord) const;
+
 public:
 
     /**
@@ -56,13 +63,6 @@ public:
   */
 
     static void setMaxCoord(double max);
-
-    /**
- * @brief Проверить валидность координат точки
- * @param max_coord Максимально допустимое значение координат
- */
-
-    void validate(double max_coord) const;
 
     /**
         *@brief Оператор сравнения точек на равенство

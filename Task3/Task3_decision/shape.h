@@ -6,20 +6,24 @@
 *@brief Абстрактный базовый класс для геометрических фигур.
 */
 
-class Shape {
+class Shape 
+{
+private:
+
+    double max_coord;
 
 public:
+
     /**
-        *@brief Виртуальный деструктор.
+    *@brief Виртуальный деструктор.
     */
 
     virtual ~Shape() = default;
-    double max_coord;
 
     /**
-   * @brief Установка максимального значения координат для всех фигур
-   * @param max Максимальное допустимое значение координат
-   */
+    * @brief Установка максимального значения координат для всех фигур
+    * @param max Максимальное допустимое значение координат
+    */
 
     static void setMaxCoord(double max);
 

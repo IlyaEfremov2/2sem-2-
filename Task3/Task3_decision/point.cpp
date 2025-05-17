@@ -8,7 +8,7 @@
 */
 
 Point::Point(double x, double y) : x(x), y(y) {
-    validate();
+    validate(max_coord);
 }
 
 /**
