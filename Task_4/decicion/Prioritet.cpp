@@ -8,7 +8,7 @@ Prioritet::Prioritet(std::initializer_list<std::pair<int, int>> init) : Priorite
         add(v, p);
     }
 }
-//конструктор копирования//
+
 Prioritet::Prioritet(const Prioritet& other) : Prioritet() {
     QueueItem* current = other.first;
     while (current) {
@@ -16,13 +16,13 @@ Prioritet::Prioritet(const Prioritet& other) : Prioritet() {
         current = current->next;
     }
 }
-//конструктор перемещения//
+
 Prioritet::Prioritet(Prioritet&& other) noexcept
     : first(other.first), last(other.last), length(other.length) {
     other.first = other.last = nullptr;
     other.length = 0;
 }
-//диструктор//
+
 Prioritet::~Prioritet()
 {
     clearAll();
@@ -37,7 +37,7 @@ void Prioritet::clearAll() {
     last = nullptr;
     length = 0;
 }
-//оператор присваивания копированием//
+
 Prioritet& Prioritet::operator=(const Prioritet& other) {
     if (this != &other) {
         clearAll();
@@ -49,7 +49,7 @@ Prioritet& Prioritet::operator=(const Prioritet& other) {
     }
     return *this;
 }
-//оператор перемещения присваивания//
+
 Prioritet& Prioritet::operator=(Prioritet&& other) noexcept {
     if (this != &other) {
         clearAll();
